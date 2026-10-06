@@ -18,7 +18,7 @@ from .retrieval import BM25Index
 
 
 def _default_questions_path(data_dir):
-    return Path(data_dir).parent.parent / "eval" / "questions.json"
+    return Path(data_dir).parent.parent / "eval" / "practice.json"
 
 
 def run_eval(data_dir, questions_path=None, top_k=4):

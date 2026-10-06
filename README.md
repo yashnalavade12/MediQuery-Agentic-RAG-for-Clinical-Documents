@@ -112,7 +112,7 @@ mediquery/
 ├── requirements.txt          # Streamlit UI dependency
 ├── .streamlit/config.toml    # light theme settings
 ├── data/synthetic/           # 6 fictional clinical documents (SYN-001…SYN-006)
-├── eval/questions.json       # 8 grounded eval questions
+├── eval/practice.json        # 8 grounded eval questions
 ├── src/mediquery/
 │   ├── __init__.py
 │   ├── __main__.py           # CLI

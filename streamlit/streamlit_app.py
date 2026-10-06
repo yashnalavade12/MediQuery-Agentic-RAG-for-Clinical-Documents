@@ -5,7 +5,7 @@ from pathlib import Path
 
 import streamlit as st
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from mediquery.agents import answer_question

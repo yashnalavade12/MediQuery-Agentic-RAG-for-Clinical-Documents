@@ -60,7 +60,7 @@ relevant is retrieved at all, the agent abstains:
 - **Tests** (`tests/`): 8 unit tests (chunking, retrieval, abstention,
   citation verification). **All passing**, stdlib `unittest` only.
 - **CLI** (`__main__.py`): ask questions, run evals, optionally use Ollama.
-- **Streamlit UI** (`streamlit_app.py`): light-themed local chat interface with
+- **Streamlit UI** (`streamlit/streamlit_app.py`): light-themed local chat interface with
   Gemma 2B via Ollama, extractive mode, and expandable cited passages.
 
 ## Roadmap (not yet built — see BUILD_CHECKLIST.md)
@@ -92,14 +92,14 @@ PYTHONPATH=src python3 -m mediquery --model gemma2:2b "Which inhaler is listed f
 
 # Light-themed chat UI (install requirements once; Ollama must be running for Gemma mode)
 python -m pip install -r requirements.txt
-streamlit run streamlit_app.py
+streamlit run streamlit/streamlit_app.py
 ```
 
 On Windows PowerShell, run these commands from the MediQuery project folder:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m streamlit run .\streamlit_app.py
+.\.venv\Scripts\python.exe -m streamlit run .\streamlit\streamlit_app.py
 ```
 
 ## Project layout
@@ -108,7 +108,8 @@ On Windows PowerShell, run these commands from the MediQuery project folder:
 mediquery/
 ├── BUILD_CHECKLIST.md        # the full 3-week build plan
 ├── README.md                 # this file
-├── streamlit_app.py          # light-themed chat UI
+├── streamlit/
+│   └── streamlit_app.py      # light-themed chat UI
 ├── requirements.txt          # Streamlit UI dependency
 ├── .streamlit/config.toml    # light theme settings
 ├── data/synthetic/           # 6 fictional clinical documents (SYN-001…SYN-006)

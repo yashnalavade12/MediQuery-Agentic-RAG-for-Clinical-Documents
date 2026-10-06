@@ -60,14 +60,15 @@ relevant is retrieved at all, the agent abstains:
 - **Tests** (`tests/`): 8 unit tests (chunking, retrieval, abstention,
   citation verification). **All passing**, stdlib `unittest` only.
 - **CLI** (`__main__.py`): ask questions, run evals, optionally use Ollama.
+- **Streamlit UI** (`streamlit_app.py`): light-themed local chat interface with
+  Gemma 2B via Ollama, extractive mode, and expandable cited passages.
 
 ## Roadmap (not yet built — see BUILD_CHECKLIST.md)
 
 PDF ingestion of real guideline corpora (WHO/NICE/CDC) · dense embeddings
 via Ollama + FAISS replacing BM25 · LangGraph orchestration · clinical NER
 (conditions, medications, dosages) · 50-question eval set with citation
-precision / faithfulness metrics · FastAPI backend · Streamlit UI with
-citation panel · Docker.
+precision / faithfulness metrics · FastAPI backend · Docker.
 
 ## Run it
 
@@ -88,6 +89,17 @@ PYTHONPATH=src python3 -m unittest discover -s tests
 
 # Generative answers via local Ollama (optional)
 PYTHONPATH=src python3 -m mediquery --model gemma2:2b "Which inhaler is listed for wheeze in SYN-004?"
+
+# Light-themed chat UI (install requirements once; Ollama must be running for Gemma mode)
+python -m pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
+
+On Windows PowerShell, run these commands from the MediQuery project folder:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m streamlit run .\streamlit_app.py
 ```
 
 ## Project layout
@@ -96,6 +108,9 @@ PYTHONPATH=src python3 -m mediquery --model gemma2:2b "Which inhaler is listed f
 mediquery/
 ├── BUILD_CHECKLIST.md        # the full 3-week build plan
 ├── README.md                 # this file
+├── streamlit_app.py          # light-themed chat UI
+├── requirements.txt          # Streamlit UI dependency
+├── .streamlit/config.toml    # light theme settings
 ├── data/synthetic/           # 6 fictional clinical documents (SYN-001…SYN-006)
 ├── eval/questions.json       # 8 grounded eval questions
 ├── src/mediquery/

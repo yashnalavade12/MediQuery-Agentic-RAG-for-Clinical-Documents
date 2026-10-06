@@ -9,9 +9,10 @@
 - [x] Extractive citation-grounded answers; Ollama client seam for Gemma 2B
 - [x] 8-question eval harness: **8/8 passing** · 8 unit tests: **all passing**
 - [x] Out-of-context abstention verified ("I don't have enough evidence…")
+- [x] Light-themed Streamlit chat UI with Ollama/extractive modes and citations
 - [ ] Still roadmap (do NOT put on resume yet): PDF ingestion, dense
       embeddings + FAISS, LangGraph, clinical NER, 50-question eval,
-      FastAPI, Streamlit UI, Docker
+      FastAPI, Docker
 
 **Why this exists:** your finished one-page resume lists MediQuery as a built project.
 Interviewers *will* go deep on an agentic RAG system. Make every resume bullet true
@@ -39,7 +40,7 @@ FastAPI, Streamlit, Docker — all already in your toolbox.
       before final synthesis (your resume claims this — build it)
 - [ ] Inline citations in answers ([1], [2] → source document + page)
 - [ ] Clinical NER pipeline: extract conditions, medications, dosages
-- [ ] Streamlit UI with a source/citation panel
+- [x] Streamlit UI with a source/citation panel
 
 ## Week 3 (Oct 19–25): eval + ship
 - [ ] Write the 50-question test set with expected citations
